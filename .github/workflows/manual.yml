@@ -36,4 +36,6 @@ jobs:
         tag=$(echo "$github.event.inputs.name"|sed -e 's/^[^\/]*/ldrho\/gcr/')
         docker pull ${{ github.event.inputs.name }}
         docker tag ${{ github.event.inputs.name }} $tag
+        echo "new tag $tag"
+        docker push $tag
         docker images

@@ -28,8 +28,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: pull gcr image
       env:
-        DOCKER_HUB_USERNAME: secrets.DOCKER_NAME
-        DOCKER_HUB_KEY: secrets.DOCKER_TOKEN
+        DOCKER_HUB_USERNAME: ${{secrets.DOCKER_NAME}}
+        DOCKER_HUB_KEY: ${{secrets.DOCKER_TOKEN}}
       run: |
         docker login -u ${{DOCKER_HUB_USERNAME} -p ${{DOCKER_HUB_KEY}}
         docker images

@@ -35,5 +35,5 @@ jobs:
         docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_KEY
         tag=$(echo "$github.event.inputs.name"|sed -e 's/^[^\/]*/ldrho\/gcr/')
         docker pull ${{ github.event.inputs.name }}
-        docker tag -t ${{ github.event.inputs.name }} $tag
+        docker tag ${{ github.event.inputs.name }} $tag
         docker images

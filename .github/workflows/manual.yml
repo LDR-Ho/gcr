@@ -27,4 +27,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: echo "secret is ${{ DOCKER_KEY }} .BTW Hello ${{ github.event.inputs.name }}"
+      run: |
+        echo "docker info "
+        docker info
+        echo "secret is ${{ DOCKER_KEY }} .BTW Hello ${{ github.event.inputs.name }}"

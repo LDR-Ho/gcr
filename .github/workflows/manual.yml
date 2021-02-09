@@ -31,7 +31,7 @@ jobs:
         DOCKER_HUB_USERNAME: ${{secrets.DOCKER_NAME}}
         DOCKER_HUB_KEY: ${{secrets.DOCKER_TOKEN}}
       run: |
-        docker login -u ${{DOCKER_HUB_USERNAME} -p ${{DOCKER_HUB_KEY}}
+        docker login -u ${{DOCKER_HUB_USERNAME}} -p ${{DOCKER_HUB_KEY}}
         docker images
         docker pull ${{ github.event.inputs.name }}
         echo "Hello ${{ github.event.inputs.name }}"
